@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:screenOrientation="landscape"
+    android:configChanges="orientation|keyboardHidden"
+    android:background="@android:color/holo_purple"
+    tools:context=".ShowActivity">
+    <!--上两行添加设置横屏-->
+    <!-- 本活动的背景色为 holo orange dark -->
+    <!-- 注意上方的 Context -->
+
+    <LinearLayout
+        android:id="@+id/llHomePage"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginBottom="8dp"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toTopOf="@+id/llHomeNav"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+
+        >
+
+        <!-- 在此定义页面主体布局 -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="45dp"
+            android:gravity="center">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="温湿度记录图"
+                android:textSize="20dp"
+                android:textColor="@android:color/holo_green_light"
+                android:textStyle="bold"
+                ></TextView>
+        </LinearLayout>
+
+        <com.github.mikephil.charting.charts.CombinedChart
+            android:id="@+id/chart"
+            android:layout_width="match_parent"
+            android:layout_height="365dp"
+            android:layout_marginTop="10dp">
+
+            <LinearLayout
+                android:id="@+id/linearLayout3"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:configChanges="orientation|keyboardHidden"
+                android:orientation="horizontal"
+                android:screenOrientation="landscape"
+                tools:context="com.example.keshe.ShowActivity">
+                <!--上两行设置横屏，configChanges横屏过程中不销毁进程-->
+            </LinearLayout>
+        </com.github.mikephil.charting.charts.CombinedChart>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:gravity="right"
+        android:layout_marginTop="440dp">
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_gravity="center"
+            android:id="@+id/show_bt"
+            android:background="@drawable/button_li"
+            android:text="获取数据"
+            android:textSize="20dp"
+            android:textStyle="bold"
+            android:layout_marginRight="80dp"
+            android:layout_height="wrap_content"></Button>
+    </LinearLayout>
+
+    <!-- 以下为导航栏的布局 -->
+    <LinearLayout
+        android:id="@+id/llHomeNav"
+        style="?android:attr/buttonBarStyle"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:background="@color/navBack"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/llHomePage">
+
+        <!-- 请务必注意以下各按钮的 drawableTop 和 textColor 属性 -->
+        <Button
+            android:id="@+id/btnNavHome"
+            style="?android:attr/buttonBarButtonStyle"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:drawableTop="@drawable/home_noclick"
+            android:onClick="onNavButtonsTapped"
+            android:text="@string/btnNavHome"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:textColor="@color/navNormal"
+            tools:ignore="OnClick" />
+
+        <Button
+            android:id="@+id/btnNavMessage"
+            style="?android:attr/buttonBarButtonStyle"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:drawableTop="@drawable/control_noclick"
+            android:onClick="onNavButtonsTapped"
+            android:text="@string/btnNavMessage"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:textColor="@color/navNormal"
+            tools:ignore="OnClick" />
+
+        <Button
+            android:id="@+id/btnNavSettings"
+            style="?android:attr/buttonBarButtonStyle"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:drawableTop="@drawable/show_click"
+            android:onClick="onNavButtonsTapped"
+            android:text="@string/btnNavSettings"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:textColor="@color/navActivated"
+            tools:ignore="OnClick" />
+    </LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

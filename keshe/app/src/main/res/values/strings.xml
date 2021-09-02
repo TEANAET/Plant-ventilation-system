@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- 这个字符串是你的工程名称，可以自己取，不一定要是 My Application -->
+    <string name="app_name">智能温控</string>
+
+    <!-- 这个是我们新添加的字符串 -->
+    <string name="dlgExitMsg">确定要退出吗？</string>
+
+    <!-- 顺便把之后要用到的字符串也一并准备了 -->
+    <string name="btnNavHome">主页</string>
+    <string name="btnNavMessage">控制台</string>
+    <string name="btnNavSettings">显示</string>
+    <string name="title_activity_login">Sign in</string>
+    <string name="prompt_email">Email</string>
+    <string name="prompt_password">Password</string>
+    <string name="action_sign_in">Sign in or register</string>
+    <string name="action_sign_in_short">Sign in</string>
+    <string name="welcome">"Welcome !"</string>
+    <string name="invalid_username">Not a valid username</string>
+    <string name="invalid_password">Password must be >5 characters</string>
+    <string name="login_failed">"Login failed"</string>
+</resources>

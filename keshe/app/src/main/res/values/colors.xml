@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#6200EE</color>
+    <color name="colorPrimaryDark">#3700B3</color>
+    <color name="colorAccent">#03DAC5</color>
+    <color name="navBack">#e0e0e0</color> <!-- 导航栏背景色 Grey 300-->
+    <color name="navNormal">#000000</color> <!-- 未激活项目的文字颜色 Black -->
+    <color name="navActivated">#039be5</color> <!-- 已激活项目的文字颜色 Light Blue 600 -->
+    <drawable name="red">#FF0000</drawable>
+</resources>
